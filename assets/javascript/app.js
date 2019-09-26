@@ -137,7 +137,7 @@ $(document).ready(function() {
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var unanswered = 0;
-var timer = 120;
+var timer = 5;
 var intervalId;
 
 
@@ -149,5 +149,17 @@ function subtractTime(){
 function decrement(){
     timer--
     $(`.timer`).html(`<hr><p>Time remaining: ` + timer + ` seconds</p>`);
+    if (timer === 0) {
+        alert("Times up!")
+        resultsPage()
+}
+function resultsPage(){
+
+    $(`.timer`).remove();
+    $(`.startWrap`).remove();
+
+
+}
+
 }
 });
