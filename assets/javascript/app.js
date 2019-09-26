@@ -153,13 +153,12 @@ function decrement(){
         alert("Times up!")
         resultsPage()
 }
+}
 function resultsPage(){
 
     $(`.timer`).remove();
     $(`.startWrap`).remove();
-
-
-}
+    
 
 }
 });
