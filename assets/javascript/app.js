@@ -4,7 +4,7 @@ $(document).ready(function() {
     $(`#startBtn`).remove();
 
     // // Populate a timer
-    subtractTime();
+        subtractTime()
     // Populate the questions
     for (let i = 0; i < questions.length; i++) {
       $(`.startWrap`).append(`<hr><p>` + questions[i].question + `</p>`);
@@ -138,11 +138,16 @@ var correctAnswers = 0;
 var incorrectAnswers = 0;
 var unanswered = 0;
 var timer = 120;
+var intervalId;
 
-setTimeout(subtractTime, 1000)
+
 
 function subtractTime(){
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+}
+function decrement(){
     timer--
-    $(`.startWrap`).append(`<hr><p>Time remaining: ` + timer + ` seconds</p>`);
+    $(`.timer`).html(`<hr><p>Time remaining: ` + timer + ` seconds</p>`);
 }
 });
