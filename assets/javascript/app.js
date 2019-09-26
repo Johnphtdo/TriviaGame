@@ -1,4 +1,10 @@
 $(document).ready(function() {
+
+    $(document).on("click","#doneBtn", function(){
+        resultsPage()
+    
+    })
+
   // When Start game is clicked, hide the start button.
   $(`#startBtn`).on("click", function() {
     $(`#startBtn`).remove();
@@ -21,6 +27,8 @@ $(document).ready(function() {
         );
       }
     }
+    $(`.startWrap`).append(`<hr><button type="button" id="doneBtn">Done</button>`)
+
   });
   
   var questions = [
@@ -137,9 +145,8 @@ $(document).ready(function() {
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var unanswered = 0;
-var timer = 5;
+var timer = 120;
 var intervalId;
-
 
 
 function subtractTime(){
@@ -159,6 +166,6 @@ function resultsPage(){
     $(`.timer`).remove();
     $(`.startWrap`).remove();
     
-
 }
-});
+
+})
