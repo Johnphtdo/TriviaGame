@@ -9,19 +9,15 @@ $(document).ready(function() {
 
     // // Populate a timer
     subtractTime();
-    // Populate the questions
+    // Populate the questionss
     for (let i = 0; i < questions.length; i++) {
       $(`.startWrap`).append(`<hr><p>` + questions[i].question + `</p>`);
 
-      // Populate the answer choices
+      // Populate the answer choices and assign value
       for (let a = 0; a < questions[i].answers.length; a++) {
+        answerValue = questions[i].answers[a].replace(/\s/g,'-')
         $(`.startWrap`).append(
-          "<br><input type='radio' name= 'radio-'" +
-            i +
-            "' value='" +
-            questions[i].answers[a] +
-            "'>" +
-            questions[i].answers[a]
+          `<br><input type='radio' name='radio-${i}' data-value=${answerValue}>${questions[i].answers[a]}`
         );
       }
     }
@@ -44,7 +40,7 @@ $(document).ready(function() {
         "Be Your Own Cleansing Pool",
         "Be Your Own Person"
       ],
-      correctAnswer: "Be Your Own Windkeeper"
+      correctAnswer: "Be-Your-Own-Windkeeper"
     },
     {
       question: "What was wrong with the couch Ross returned to the store?",
@@ -142,12 +138,10 @@ $(document).ready(function() {
   ];
   // Starting variables
   var userScore = {
-
     correct: 0,
-    incorrect:0,
-    unanswered:15,
-
-  }
+    incorrect: 0,
+    unanswered: 15
+  };
   var timer = 120;
   var intervalId;
 
@@ -166,14 +160,29 @@ $(document).ready(function() {
   function resultsPage() {
     clearInterval(intervalId);
     $(`.timer`).remove();
-    $(`.startWrap`).remove();
-
-    if ($('input[name="radio-0"]:checked').val() == questions[0].correctAnswer.val){
-        userScore.correct++;
-        } else{
-            userScore.incorrect++;
-        }
-        console.log(userScore);
     
+    let test = $('input[name="radio-0"]:checked');
+    console.log(test);
+    
+    
+    if ($('input[name="radio-0"]:checked').val() == "Jam") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      userScore.unanswered--;
+    }
+    if ($('input[name="radio-1"]:checked').val() == "Be Your Own Windkeeper") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      console.log("WRONG" + $('input[name="radio-1"]:checked').val());
+
+      userScore.incorrect++;
+      userScore.unanswered--;
+    }
+    console.log(userScore);
+
+    $(`.startWrap`).remove();
   }
 });
