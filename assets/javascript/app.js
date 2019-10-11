@@ -17,7 +17,7 @@ $(document).ready(function() {
       for (let a = 0; a < questions[i].answers.length; a++) {
         answerValue = questions[i].answers[a].replace(/\s/g,'-')
         $(`.startWrap`).append(
-          `<br><input type='radio' name='radio-${i}' data-value=${answerValue}>${questions[i].answers[a]}`
+          `<br><input type='radio' name='radio-${i}' value=${answerValue}>${questions[i].answers[a]}`
         );
       }
     }
@@ -50,7 +50,7 @@ $(document).ready(function() {
         "It had a stain",
         "It would not PIVOT!"
       ],
-      correctAnswer: "It was cut in half"
+      correctAnswer: "It-was-cut-in-half"
     },
     {
       question:
@@ -61,18 +61,18 @@ $(document).ready(function() {
         "Cups and Ice",
         "Rice and Balloons"
       ],
-      correctAnswer: "Cups and Ice"
+      correctAnswer: "Cups-and-Ice"
     },
     {
       question:
         "What did Chandler change about his appearance that no one noticed?",
       answers: ["His Hair", "His Mustache", "His Eyebrows", "His Glasses"],
-      correctAnswer: "His Glasses"
+      correctAnswer: "His-Glasses"
     },
     {
       question: "What was the name of the coffee shop?",
       answers: ["Perk Central", "Perks Coffee", "Central Perk", "Coffee Perk"],
-      correctAnswer: "Central Perk"
+      correctAnswer: "Central-Perk"
     },
     {
       question: "How many times did Ross get divorced?",
@@ -92,12 +92,12 @@ $(document).ready(function() {
         "How you doin'?",
         "How are you?"
       ],
-      correctAnswer: "How you doin'?"
+      correctAnswer: "How-you-doin'?"
     },
     {
       question: "What was the name Joey uses as an alias?",
       answers: ["Ken Adams", "Max Power", "Chandler Bing", "Adams Ken"],
-      correctAnswer: "Ken Adams"
+      correctAnswer: "Ken-Adams"
     },
     {
       question:
@@ -108,7 +108,7 @@ $(document).ready(function() {
         "Nothing",
         "The Front Phalange"
       ],
-      correctAnswer: "The Left Phalange"
+      correctAnswer: "The-Left-Phalange"
     },
     {
       question: "What was Chandler's job before he went into advertising?",
@@ -118,12 +118,12 @@ $(document).ready(function() {
         "Actor",
         "Statistical Analysis and Data Reconfiguration"
       ],
-      correctAnswer: "Statistical Analysis and Data Reconfiguration"
+      correctAnswer: "Statistical-Analysis-and-Data-Reconfiguration"
     },
     {
       question: "Where was Joey backpacking in his magical story?",
       answers: ["Asia", "Canada", "Western Europe", "Africa"],
-      correctAnswer: "Western Europe"
+      correctAnswer: "Western-Europe"
     },
     {
       question: "What was Chandler's middle name?",
@@ -133,7 +133,7 @@ $(document).ready(function() {
     {
       question: "What made Chandler start to freak out about his wedding?",
       answers: ["The In-Laws", "The Bings", "Joey", "Marcel"],
-      correctAnswer: "The Bings"
+      correctAnswer: "The-Bings"
     }
   ];
   // Starting variables
@@ -161,8 +161,8 @@ $(document).ready(function() {
     clearInterval(intervalId);
     $(`.timer`).remove();
     
-    let test = $('input[name="radio-0"]:checked');
-    console.log(test);
+    // let test = $('input[name="radio-0"]:checked').val()
+    // console.log(test);
     
     
     if ($('input[name="radio-0"]:checked').val() == "Jam") {
@@ -170,19 +170,111 @@ $(document).ready(function() {
       userScore.unanswered--;
     } else {
       userScore.incorrect++;
-      userScore.unanswered--;
+      
     }
-    if ($('input[name="radio-1"]:checked').val() == "Be Your Own Windkeeper") {
+    if ($('input[name="radio-1"]:checked').val() == "Be-Your-Own-Windkeeper") {
       userScore.correct++;
       userScore.unanswered--;
     } else {
-      console.log("WRONG" + $('input[name="radio-1"]:checked').val());
-
       userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-2"]:checked').val() == "It-was-cut-in-half") {
+      userScore.correct++;
       userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-3"]:checked').val() == "Cups-and-Ice") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-4"]:checked').val() == "His-Glasses") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-5"]:checked').val() == "Central-Perk") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-6"]:checked').val() == "3") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-7"]:checked').val() == "3") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-8"]:checked').val() == "How-you-doin'") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-9"]:checked').val() == "Ken-Adams") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-10"]:checked').val() == "The-Left-Phalange") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-11"]:checked').val() == "Statistical-Analysis-and-Data-Reconfiguration") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-12"]:checked').val() == "Western-Europe") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-13"]:checked').val() == "Muriel") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
+    }
+    if ($('input[name="radio-14"]:checked').val() == "The-Bings") {
+      userScore.correct++;
+      userScore.unanswered--;
+    } else {
+      userScore.incorrect++;
+      
     }
     console.log(userScore);
 
     $(`.startWrap`).remove();
+    $(`.resultsWrap`).append(`<p>Correct: `+userScore.correct+`</p>`)
+    $(`.resultsWrap`).append(`<p>Incorrect: `+userScore.incorrect+`</p>`)
+    $(`.resultsWrap`).append(`<p>Unanswered: `+userScore.unanswered+`</p>`)
   }
 });
