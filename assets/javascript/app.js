@@ -140,7 +140,7 @@ $(document).ready(function() {
   var userScore = {
     correct: 0,
     incorrect: 0,
-    unanswered: 15
+    unanswered: 15,
   };
   var timer = 120;
   var intervalId;
@@ -167,111 +167,97 @@ $(document).ready(function() {
     
     if ($('input[name="radio-0"]:checked').val() == "Jam") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-1"]:checked').val() == "Be-Your-Own-Windkeeper") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-2"]:checked').val() == "It-was-cut-in-half") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-3"]:checked').val() == "Cups-and-Ice") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-4"]:checked').val() == "His-Glasses") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-5"]:checked').val() == "Central-Perk") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-6"]:checked').val() == "3") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-7"]:checked').val() == "3") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-8"]:checked').val() == "How-you-doin'") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-9"]:checked').val() == "Ken-Adams") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-10"]:checked').val() == "The-Left-Phalange") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-11"]:checked').val() == "Statistical-Analysis-and-Data-Reconfiguration") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-12"]:checked').val() == "Western-Europe") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-13"]:checked').val() == "Muriel") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-14"]:checked').val() == "The-Bings") {
       userScore.correct++;
-      userScore.unanswered--;
     } else {
       userScore.incorrect++;
       
     }
+    userScore.unanswered = userScore.unanswered - userScore.correct
     console.log(userScore);
-
+    
     $(`.startWrap`).remove();
     $(`.resultsWrap`).append(`<p>Correct: `+userScore.correct+`</p>`)
     $(`.resultsWrap`).append(`<p>Incorrect: `+userScore.incorrect+`</p>`)
