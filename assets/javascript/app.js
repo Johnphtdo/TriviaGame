@@ -161,101 +161,101 @@ $(document).ready(function() {
     clearInterval(intervalId);
     $(`.timer`).remove();
     
-    // let test = $('input[name="radio-0"]:checked').val()
-    // console.log(test);
+    // let test = ($('input[name="radio-0"]').is(`:checked`))
+    // console.log(test)
     
     
     if ($('input[name="radio-0"]:checked').val() == "Jam") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-0"]:checked').val() !== "Jam" && ($('input[name="radio-0"]').is(`:checked`) === true)) {
       userScore.incorrect++;
-      
-    }
+    } 
+    
     if ($('input[name="radio-1"]:checked').val() == "Be-Your-Own-Windkeeper") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-1"]:checked').val() !== "Be-Your-Own-Windkeeper" && ($('input[name="radio-1"]').is(`:checked`) === true)) {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-2"]:checked').val() == "It-was-cut-in-half") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-2"]:checked').val() !== "It-was-cut-in-half" && ($('input[name="radio-2"]').is(`:checked`) === true)){
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-3"]:checked').val() == "Cups-and-Ice") {
       userScore.correct++;
-    } else {
+    } else if (($('input[name="radio-3"]:checked').val() !== "Cups-and-Ice") && ($('input[name="radio-3"]').is(`:checked`) === true)) {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-4"]:checked').val() == "His-Glasses") {
       userScore.correct++;
-    } else {
+    } else if (($('input[name="radio-4"]:checked').val() !== "His-Glasses")&& ($('input[name="radio-4"]').is(`:checked`) === true)) {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-5"]:checked').val() == "Central-Perk") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-5"]:checked').val() !== "Central-Perk" && ($('input[name="radio-5"]').is(`:checked`) === true)) {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-6"]:checked').val() == "3") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-6"]:checked').val() !== "3" && ($('input[name="radio-6"]').is(`:checked`) === true)) {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-7"]:checked').val() == "3") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-7"]:checked').val() !== "3" && ($('input[name="radio-7"]').is(`:checked`) === true)) {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-8"]:checked').val() == "How-you-doin'") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-8"]:checked').val() !== "How-you-doin'" && ($('input[name="radio-8"]').is(`:checked`) === true)){
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-9"]:checked').val() == "Ken-Adams") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-9"]:checked').val() !== "Ken-Adams" && ($('input[name="radio-9"]').is(`:checked`) === true)){
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-10"]:checked').val() == "The-Left-Phalange") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-10"]:checked').val() !== "The-Left-Phalange" && ($('input[name="radio-10"]').is(`:checked`) === true)) {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-11"]:checked').val() == "Statistical-Analysis-and-Data-Reconfiguration") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-11"]:checked').val() !== "Statistical-Analysis-and-Data-Reconfiguration" && ($('input[name="radio-11"]').is(`:checked`) === true)) {
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-12"]:checked').val() == "Western-Europe") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-12"]:checked').val() !== "Western-Europe" && ($('input[name="radio-12"]').is(`:checked`) === true)){
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-13"]:checked').val() == "Muriel") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-13"]:checked').val() !== "Muriel" && ($('input[name="radio-13"]').is(`:checked`) === true)){
       userScore.incorrect++;
       
     }
     if ($('input[name="radio-14"]:checked').val() == "The-Bings") {
       userScore.correct++;
-    } else {
+    } else if ($('input[name="radio-14"]:checked').val() !== "The-Bings" && ($('input[name="radio-14"]').is(`:checked`) === true)) {
       userScore.incorrect++;
       
     }
-    userScore.unanswered = userScore.unanswered - userScore.correct
+    userScore.unanswered = userScore.unanswered - (userScore.correct + userScore.incorrect)
     console.log(userScore);
     
     $(`.startWrap`).remove();
