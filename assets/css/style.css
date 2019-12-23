@@ -1,0 +1,6 @@
+.jumbotron{
+    background-image: url("../images/friends.jpg");
+    background-size: cover;
+    background-position-y: 15%;
+    color: white;
+}

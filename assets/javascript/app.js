@@ -3,6 +3,11 @@ $(document).ready(function() {
     resultsPage();
   });
 
+  $(document).on("click", "#restartBtn", function() {
+    console.log("working")
+    location.reload();
+  });
+  
   // When Start game is clicked, hide the start button.
   $(`#startBtn`).on("click", function() {
     $(`#startBtn`).remove();
@@ -22,7 +27,7 @@ $(document).ready(function() {
       }
     }
     $(`.startWrap`).append(
-      `<hr><button type="button" id="doneBtn">Done</button>`
+      `<hr><button type="button" id="doneBtn" class="btn btn-primary btn-lg text-center">Done</button>`
     );
   });
 
@@ -151,7 +156,7 @@ $(document).ready(function() {
   }
   function decrement() {
     timer--;
-    $(`.timer`).html(`<hr><p>Time remaining: ` + timer + ` seconds</p>`);
+    $(`.timer`).html(`<p>Time remaining: ` + timer + ` seconds</p>`);
     if (timer === 0) {
       alert("Times up!");
       resultsPage();
@@ -262,5 +267,6 @@ $(document).ready(function() {
     $(`.resultsWrap`).append(`<p>Correct: `+userScore.correct+`</p>`)
     $(`.resultsWrap`).append(`<p>Incorrect: `+userScore.incorrect+`</p>`)
     $(`.resultsWrap`).append(`<p>Unanswered: `+userScore.unanswered+`</p>`)
+    $(`.resultsWrap`).append(`<button type="button" id="restartBtn" class="btn btn-primary btn-lg text-center">Restart</button>`)
   }
 });
